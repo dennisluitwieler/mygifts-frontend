@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { GIFT_REPOSITORY } from './gift-repository-token';
 import { LocalStorageGiftRepository } from './local-storage-gift.repository';
 import { MatDialog } from '@angular/material/dialog';
 import { AddGiftDialogComponent } from './add-gift-dialog/add-gift-dialog.component';
@@ -28,7 +29,7 @@ export class ListComponent implements OnInit {
   viewMode: 'list' | 'grid' = 'grid';
   protected gifts: Gift[] = [];
 
-  private readonly giftRepository = inject(LocalStorageGiftRepository);
+  private readonly giftRepository = inject(GIFT_REPOSITORY);
   private readonly dialog = inject(MatDialog);
 
   async ngOnInit() {

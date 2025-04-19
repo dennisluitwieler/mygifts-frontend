@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Gift } from './gift.interface';
 import { v4 as uuidv4 } from 'uuid';
+import { Gift } from './gift.interface';
+import { GiftRepository } from './gift.repository';
 
 @Injectable({ providedIn: 'root' })
-export class LocalStorageGiftRepository {
+export class LocalStorageGiftRepository implements GiftRepository {
   private readonly STORAGE_KEY = 'gifts';
 
   async getAll(): Promise<Gift[]> {
