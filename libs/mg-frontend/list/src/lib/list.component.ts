@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { GIFT_REPOSITORY } from './gift-repository-token';
-import { LocalStorageGiftRepository } from './local-storage-gift.repository';
 import { MatDialog } from '@angular/material/dialog';
 import { AddGiftDialogComponent } from './add-gift-dialog/add-gift-dialog.component';
 import { Gift } from './gift.interface';
