@@ -13,14 +13,10 @@ classDiagram
 
   direction TB
 
-  class Gift {
-    <<interface>>
-    + id: string
-    + name: string
-    + description: string
-    + price: number
-    + imageUrl: string
-    + link?: string
+  
+  
+  class AppConfig {
+    
   }
 
   class ListComponent {
@@ -28,7 +24,6 @@ classDiagram
     - giftRepository: GiftRepository
     + addGift(): void
   }
-
 
   class GiftRepository {
     <<interface>>
@@ -48,8 +43,26 @@ classDiagram
     + add(): Promise<void>
   }
 
-  ListComponent --> GiftRepository
-  LocalStorageGiftRepository --|> GiftRepository
-  InMemoryGiftRepository --|> GiftRepository
+  class Gift {
+    <<interface>>
+    + id: string
+    + name: string
+    + description: string
+    + price: number
+    + imageUrl: string
+    + link?: string
+  }
+
+    AppConfig --> ListComponent
+%%    AppConfig --> GiftRepository
+%%  AppConfig --> LocalStorageGiftRepository
+%%    AppConfig --> InMemoryGiftRepository
+    
+  
+    ListComponent --> GiftRepository
+    GiftRepository <|-- LocalStorageGiftRepository
+    GiftRepository <|-- InMemoryGiftRepository
+
+ 
 
 ```
