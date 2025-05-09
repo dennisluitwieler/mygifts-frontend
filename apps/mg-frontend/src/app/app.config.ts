@@ -7,13 +7,13 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
-    {
-      provide: GIFT_REPOSITORY,
-      useClass: InMemoryGiftRepository,
-    }
     // {
     //   provide: GIFT_REPOSITORY,
-    //   useClass: LocalStorageGiftRepository,
+    //   useClass: InMemoryGiftRepository,
     // }
+    {
+      provide: GIFT_REPOSITORY,
+      useClass: LocalStorageGiftRepository,
+    }
   ],
 };
